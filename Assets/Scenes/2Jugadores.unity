@@ -1485,7 +1485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  inputHorizontal: HorizontalA
   inputVertical: VerticalA
 --- !u!212 &1218567375
 SpriteRenderer:
@@ -1956,7 +1955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  inputHorizontal: HorizontalB
   inputVertical: VerticalB
 --- !u!212 &2131959974
 SpriteRenderer:
