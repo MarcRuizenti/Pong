@@ -6,14 +6,12 @@ public class MoviminetoJugador : MonoBehaviour
 {
 
     public float speed;
-    public string inputHorizontal;
     public string inputVertical;
     void Update()
     {
-        float horizontal = Input.GetAxis(inputHorizontal);
 
         float vertical = Input.GetAxis(inputVertical);
 
-        transform.position += new Vector3(horizontal, vertical, 0) * Time.deltaTime * speed;
+        transform.position += new Vector3(0, vertical, 0) * Time.deltaTime * speed;
     }
 }
