@@ -6,7 +6,6 @@ public class MovimientoPelota : MonoBehaviour
 {
     private Vector3 direccion;
     public float speed;
-    public Puntuacion punt;
 
     
     private void Start()
@@ -31,7 +30,7 @@ public class MovimientoPelota : MonoBehaviour
         {
             horizontal = -1f;
         }
-        float vertical = Random.Range(-1f, 1f);
+        float vertical = -1f;
         direccion = new Vector3(horizontal, vertical, 0f).normalized;
     }
 
@@ -52,18 +51,11 @@ public class MovimientoPelota : MonoBehaviour
         if (collision.gameObject.CompareTag("Porteria1"))
         {
             Spawn();
-            if (punt != null)
-            {
-                punt.jugador2++;
-            }
         }
         if (collision.gameObject.CompareTag("Porteria2"))
         {
             Spawn();
-            if (punt != null)
-            {
-                punt.jugador1++;
-            }
+            Destroy(collision);
         }
     }
 
