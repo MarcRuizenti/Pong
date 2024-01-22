@@ -22,14 +22,6 @@ public class MovimientoPelota : MonoBehaviour
     {
         transform.position = Vector3.zero;
         float horizontal = Random.Range(-1f, 1f);
-        if (horizontal > 0)
-        {
-            horizontal = 1f;
-        }
-        else
-        {
-            horizontal = -1f;
-        }
         float vertical = -1f;
         direccion = new Vector3(horizontal, vertical, 0f).normalized;
     }
@@ -54,8 +46,16 @@ public class MovimientoPelota : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Porteria2"))
         {
-            Spawn();
-            Destroy(collision);
+            direccion.y *= -1;
+            Destroy(collision.gameObject);
+        }
+
+
+        if (collision.gameObject.CompareTag("Pala"))
+        {
+            Vector3 newDirecction = transform.position - collision.transform.position;
+            newDirecction.Normalize();
+            direccion = newDirecction;
         }
     }
 
